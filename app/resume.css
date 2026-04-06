@@ -1,0 +1,215 @@
+/* --- CSS Reset & Base Styles --- */
+:root {
+  /* Modern & Professional Color Palette */
+  --primary-color: #1e40af; /* Deep blue for main headers */
+  --secondary-color: #2563eb; /* Vibrant blue for sub-headers */
+  --accent-color: #06b6d4; /* Cyan for accents/links */
+  --text-main: #1f2937; /* Dark gray for body text */
+  --text-light: #4b5563; /* Medium gray for secondary text */
+  --bg-light: #f3f4f6; /* Very light gray background */
+  --bg-white: #ffffff; /* White background for the main document */
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean font */
+}
+
+.resume-container {
+  max-width: 850px; /* Standard A4ish width for scannability */
+  margin: 0 auto;
+  background-color: var(--bg-white);
+  padding: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle "lift" */
+  border-radius: 4px;
+}
+
+/* --- Header Section (Picture & Contact Info) --- */
+.resume-header {
+  display: grid;
+  grid-template-columns: 150px 1fr; /* Image column / Info column */
+  gap: 30px;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 2px solid var(--bg-light);
+  margin-bottom: 30px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Perfect Circle */
+  object-fit: cover; /* Ensures image isn't squished */
+  border: 5px solid var(--bg-light); /* "Frame" effect */
+}
+
+.name-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-name {
+  font-size: 32px;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.title-sub {
+  font-size: 18px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.contact-row {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-row a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-row a:hover {
+  color: var(--accent-color);
+}
+
+/* --- Main Content Layout --- */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for a modern split look */
+  gap: 40px;
+}
+
+/* Full width summaries/sections above the split */
+.section-summary {
+  grid-column: 1 / -1;
+  margin-bottom: 30px;
+}
+
+/* General Section Styling */
+.resume-section {
+  margin-bottom: 30px;
+}
+
+.resume-section h2 {
+  font-size: 18px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* --- Section Specific Styling --- */
+.experience-item,
+.project-item,
+.education-item {
+  margin-bottom: 20px;
+}
+
+.resume-section h3 {
+  font-size: 16px;
+  color: var(--secondary-color);
+  margin-bottom: 3px;
+}
+
+.resume-section h3 span {
+  font-weight: 400;
+  color: var(--text-main);
+}
+
+.sub-meta {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.resume-section ul {
+  list-style-type: none; /* Modern, no bullets */
+  padding-left: 10px;
+}
+
+.resume-section ul li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  position: relative;
+  color: var(--text-main);
+}
+
+.resume-section ul li::before {
+  content: '•'; /* Subtle custom bullet */
+  color: var(--accent-color);
+  position: absolute;
+  left: -15px;
+}
+
+.resume-section p {
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.gpa-tag {
+  background-color: var(--accent-color);
+  color: var(--bg-white);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.skill-group {
+  margin-bottom: 15px;
+}
+
+.skill-group h3 {
+  font-size: 14px;
+  color: var(--secondary-color);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.left-col,
+.right-col {
+  /* Column styling */
+}
+
+/* --- Responsiveness (Mobile-Friendly) --- */
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 30px 20px;
+  }
+
+  .resume-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-section h2 {
+    text-align: center;
+  }
+
+  .contact-row {
+    justify-content: center;
+  }
+}
